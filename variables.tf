@@ -1,13 +1,13 @@
 variable "region" {
   type        = string
   description = "AWS Region where you want the services to be deployed"
-  default     = "ap-northeast-3"
+  default     = "us-west-1"
 }
 
 variable "azs_list" {
   type        = list(string)
   description = "List of Availability Zones"
-  default     = ["ap-northeast-3a", "ap-northeast-3b"]
+  default     = ["us-west-1b", "us-west-1c"]
 }
 
 variable "profile" {
@@ -20,7 +20,6 @@ variable "kubernetes_config_file_path" {
   type        = string
   description = "Kube config location path"
   default     = "~/.kube/config"
-  #default     = "C:\Users\Vijay Swaminathan\.kube"
 }
 
 variable "cidr" {
@@ -101,7 +100,6 @@ variable "instances_count" {
 variable "nexus-license-file-path" {
   type        = string
   description = "License file path"
-  default     = "2022-sonatype-internal-rm-lc-fw-fwfa-10apps-10rm_users-1000lc_users-10fw_users.lic"
 }
 
 variable "nexus-license-file-secrets-name" {
@@ -130,7 +128,7 @@ variable "nexus-repository-database-username" {
 
 variable "nexus-repository-database-password" {
   type        = string
-  description = "Database Username"
+  description = "Default Database Password"
   default     = "s0natype"
 }
 
@@ -148,16 +146,13 @@ variable "secrets-recovery-window" {
 variable "nexus-repository-db-writer-instance-class" {
   type        = string
   description = "Instance class for Aurora PostgreSQL Database"
-  default     = "db.r5.large"
- //default="db.r6g.2xlarge"
-
+  default     = "db.r6g.2xlarge"
 }
 
 variable "nexus-repository-db-reader-instance-class" {
   type        = string
   description = "Instance class for Aurora PostgreSQL Database"
-  default     = "db.r5.large"
-  //default="db.r6g.2xlarge"
+  default     = "db.r6g.2xlarge"
 }
 
 variable "nexus-repository-database-subnet-group" {
@@ -193,7 +188,7 @@ variable "aws-load-balancer-controller" {
 variable "nexus-repository-instances-count" {
   type        = string
   description = "Number of Nexus Repository instances"
-  default     = "1"
+  default     = "3"
 }
 
 variable "nexus-repository-image" {
@@ -205,7 +200,7 @@ variable "nexus-repository-image" {
 variable "nexus-repository-version" {
   type        = string
   description = "Nexus Repository Image version"
-  default     = "3.51.0"
+  default     = "3.52.0"
 }
 
 variable "nexus-repository-sa-name" {
