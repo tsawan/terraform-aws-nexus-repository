@@ -88,12 +88,12 @@ variable "eks_node_instance_capacity_type" {
   default     = "ON_DEMAND"
 }
 
-variable "instances_count" {
-  type = map(any)
+variable "eks_nodes_count" {
+  type = map(any)variable 
   default = {
-    "min_size"     = "1"
-    "max_size"     = "1"
-    "desired_size" = "1"
+    "min_size"     = "2"
+    "max_size"     = "2"
+    "desired_size" = "2"
   }
 }
 
@@ -188,7 +188,7 @@ variable "aws-load-balancer-controller" {
 variable "nexus-repository-instances-count" {
   type        = string
   description = "Number of Nexus Repository instances"
-  default     = "3"
+  default     = "2"
 }
 
 variable "nexus-repository-image" {
