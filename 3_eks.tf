@@ -23,9 +23,9 @@ module "eks" {
   eks_managed_node_groups  = {
     nexus-repository = {
       name         = var.eks_cluster_node_grp_name
-      min_size     = var.instances_count["min_size"]
-      max_size     = var.instances_count["max_size"]
-      desired_size = var.instances_count["desired_size"]
+      min_size     = var.eks_nodes_count["min_size"]
+      max_size     = var.eks_nodes_count["max_size"]
+      desired_size = var.eks_nodes_count["desired_size"]
     instance_types = var.eks_node_instance_types
     capacity_type  = var.eks_node_instance_capacity_type
 
