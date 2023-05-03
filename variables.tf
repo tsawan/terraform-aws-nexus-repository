@@ -89,7 +89,7 @@ variable "eks_node_instance_capacity_type" {
 }
 
 variable "eks_nodes_count" {
-  type = map(any)variable 
+  type = map(any)
   default = {
     "min_size"     = "2"
     "max_size"     = "2"
