@@ -46,12 +46,6 @@ variable "public_subnets" {
   default     = ["10.0.0.0/24", "10.1.0.0/24"]
 }
 
-variable "private_subnets" {
-  type        = list(string)
-  description = "Private Subnets of the VPC"
-  default     = ["10.2.0.0/24", "10.3.0.0/24"]
-}
-
 variable "default_route_table" {
   type        = string
   description = "Name of the Route Table"
