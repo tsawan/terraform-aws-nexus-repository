@@ -46,7 +46,7 @@ module "eks" {
 
 data "utils_aws_eks_update_kubeconfig" "update_kube_config_file" {
   depends_on = [module.eks]
-  profile      = var.profile
+  #profile      = var.profile
   cluster_name = var.eks_cluster_name
   region= var.region
   kubeconfig   = var.kubernetes_config_file_path
