@@ -54,9 +54,9 @@ data "utils_aws_eks_update_kubeconfig" "update_kube_config_file" {
 
 resource "null_resource" "kubectl" {
     depends_on = [module.eks]
-    provisioner "local-exec" {
-        command = "aws eks --region ${var.region} update-kubeconfig --name ${var.eks_cluster_name} --profile ${var.profile}"
-    }
+  #  provisioner "local-exec" {
+  #      command = "aws eks --region ${var.region} update-kubeconfig --name ${var.eks_cluster_name} --profile ${var.profile}"
+  #  }
 }
 
 ################################################################################
